@@ -13,7 +13,7 @@ private static final double TOLERANCIA = 0.0001;
 @Test
 public void testServirCantidadMenorDisponibleConstructorCompleto() {
 	// Se utiliza el constructor con capacidad máxima personalizada.
-	Maquina maquina = new Maquina("Pilsener", "Cerveza rubia", 0.05, 1000);
+	Maquina maquina = new Maquina("Pilsener", "Cerveza rubia", 0.05, 1000, "6535");
 
 	// Se carga cerveza en la máquina.
 	maquina.recargarCerveza(500);
@@ -31,7 +31,7 @@ public void testServirCantidadMenorDisponibleConstructorCompleto() {
 @Test
 public void testServirExactamenteCantidadDisponible() {
 	// Se utiliza el constructor con capacidad máxima personalizada.
-	Maquina maquina = new Maquina("Pilsener", "Cerveza rubia", 0.05, 1000);
+	Maquina maquina = new Maquina("Pilsener", "Cerveza rubia", 0.05, 1000, "6535");
 
 	// Se carga una cantidad específica de cerveza.
 	maquina.recargarCerveza(500);
@@ -49,7 +49,7 @@ public void testServirExactamenteCantidadDisponible() {
 @Test
 public void testNoServirCuandoNoHaySuficienteCerveza() {
 	// Se utiliza el constructor con capacidad máxima personalizada.
-	Maquina maquina = new Maquina("Pilsener", "Cerveza rubia", 0.05, 1000);
+	Maquina maquina = new Maquina("Pilsener", "Cerveza rubia", 0.05, 1000, "6535");
 
 	// Se carga una cantidad menor a la que se desea servir.
 	maquina.recargarCerveza(300);
@@ -67,7 +67,7 @@ public void testNoServirCuandoNoHaySuficienteCerveza() {
 @Test
 public void testServirCervezaUsandoConstructorSinCapacidad() {
 	// Se utiliza el constructor que establece una capacidad máxima por defecto.
-	Maquina maquina = new Maquina("Negra", "Cerveza artesanal", 0.10);
+	Maquina maquina = new Maquina("Negra", "Cerveza artesanal", 0.10, "6535");
 
 	// Se carga cerveza en la máquina.
 	maquina.recargarCerveza(500);
