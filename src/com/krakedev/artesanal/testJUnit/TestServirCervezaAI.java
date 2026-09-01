@@ -92,7 +92,7 @@ public void testLlenarMaquinaHastaCapacidadMenos200() {
     maquina.llenarMaquina();
 
     // La nueva regla establece que debe quedar con 800 ml.
-    assertEquals(900.0, maquina.getCantidadActual(), TOLERANCIA);
+    assertEquals(800.0, maquina.getCantidadActual(), TOLERANCIA);
 }
 
 
