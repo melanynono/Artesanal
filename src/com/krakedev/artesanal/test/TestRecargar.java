@@ -27,7 +27,7 @@ public class TestRecargar {
 		
 		
 		System.out.println("-------Recarga 3------");
-		resultado = rubia.recargarCerveza(2900);
+		resultado = rubia.recargarCerveza(2800);
 		
 		System.out.println("¿Se recargó correctamente? " + resultado);
 		rubia.imprimir();

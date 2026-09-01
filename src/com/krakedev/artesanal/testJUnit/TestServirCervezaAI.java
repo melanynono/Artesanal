@@ -82,4 +82,18 @@ public void testServirCervezaUsandoConstructorSinCapacidad() {
 	assertEquals(250.0, maquina.getCantidadActual(), TOLERANCIA);
 }
 
+@Test
+public void testLlenarMaquinaHastaCapacidadMenos200() {
+
+    // Se crea una máquina con capacidad máxima de 1000 ml.
+    Maquina maquina = new Maquina("Pilsener", "Cerveza rubia", 0.05, 1000, "6535");
+
+    // Se llena la máquina.
+    maquina.llenarMaquina();
+
+    // La nueva regla establece que debe quedar con 800 ml.
+    assertEquals(900.0, maquina.getCantidadActual(), TOLERANCIA);
+}
+
+
 }
