@@ -19,5 +19,6 @@ public class TestNegocio {
 		double capacidad = m1.getCapacidadMaxima();	
 	}
 	
+	
 
 }
