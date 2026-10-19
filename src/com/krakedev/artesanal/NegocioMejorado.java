@@ -130,4 +130,15 @@ public class NegocioMejorado {
     }
 
     
+    public double consultarValorVendido () {
+    	double total = 0;
+    	
+    	for(Cliente cliente : clientes) {
+    		
+    		total = total + cliente.getTotalConsumido();
+    	}
+    	return total;
+    	
+    }
+    
 }
