@@ -4,11 +4,14 @@ import java.util.ArrayList;
 
 public class NegocioMejorado {
 	
-	ArrayList<Maquina> maquinas;
+	private ArrayList<Maquina> maquinas;
+	private ArrayList<Cliente> clientes = new ArrayList<>();
+	private int ultimoCodigo = 100;
 	
 	public NegocioMejorado() {
 		
 		maquinas = new ArrayList<Maquina>();
+		
 	}
 	
 
@@ -63,8 +66,30 @@ public class NegocioMejorado {
     }
 
     return null;
-}
+    }
 
 	
+    public void registrarCliente(String nombre, String cedula) {
+    	
+    	Cliente cliente = new Cliente(nombre, cedula);
+    	
+    	cliente.setCodigo(ultimoCodigo);
+    	ultimoCodigo++;
+    	
+    	clientes.add(cliente);
+    }
 
+    
+    public Cliente buscarClientePorCedula(String cedula) {
+    	for(Cliente cliente : clientes ) {
+    		
+    		if(cliente.getCedula().equals(cedula)) {
+    			return cliente;
+    			
+    		}
+    	
+    	}
+    	return null;
+    }
+    
 }
