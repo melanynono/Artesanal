@@ -92,4 +92,42 @@ public class NegocioMejorado {
     	return null;
     }
     
+    
+    public Cliente buscarClientePorCodigo(double codigo) {
+    	
+    	for (Cliente cliente : clientes) {
+    		
+    		if(cliente.getCodigo() == (codigo)) {
+    			return cliente;
+    		}
+    	}
+    	
+    	return null; 	
+    }
+
+    
+    public void consumirCerveza(double codigoCliente, String codigoMaquina, double cantidad) {
+    	
+        Maquina maquina = recuperarMaquina(codigoMaquina);
+        
+        Cliente cliente = buscarClientePorCodigo(codigoCliente);
+        
+        if(maquina != null && cliente != null) {
+        	double valor = maquina.servirCerveza(cantidad);
+        	registrarConsumo(codigoCliente, valor);
+        	}
+    	
+    }
+    
+    public void registrarConsumo(double codigoCliente, double valor) {
+    	
+    	Cliente cliente = buscarClientePorCodigo(codigoCliente);
+    	
+    	 if (cliente != null) {
+    	        cliente.setTotalConsumido(cliente.getTotalConsumido() + valor);
+    	    }
+    	
+    }
+
+    
 }
